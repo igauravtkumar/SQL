@@ -1,0 +1,108 @@
+1. What is SQL?
+
+Answer: SQL (Structured Query Language) is a standard language used to interact with relational databases. It is used to create, retrieve, update, and delete data stored in a database.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+2. What are the types of SQL statements?
+Answer:
+DDL (Data Definition Language): CREATE, ALTER, DROP, TRUNCATE.
+DML (Data Manipulation Language): INSERT, UPDATE, DELETE.
+DQL (Data Query Language): SELECT.
+DCL (Data Control Language): GRANT, REVOKE.
+TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+3. What is a database?
+Answer: A database is an organized collection of data stored electronically. It allows data to be stored, accessed, and managed efficiently.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+4. What is a table in SQL?
+Answer: A table is a collection of data organized in rows and columns. Each column represents a field, and each row represents a record.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+5. What is the difference between a primary key and a unique key?
+Answer:
+Primary Key: Uniquely identifies each record in a table. It does not allow NULL values.
+Unique Key: Ensures all values in a column are unique. It allows one NULL value.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+6. What is normalization?
+Answer: Normalization is the process of organizing data in a database to reduce redundancy and improve integrity. It involves dividing tables into smaller related tables and defining relationships.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+7. What are the different types of joins in SQL?
+Answer:
+INNER JOIN: Returns records with matching values in both tables.
+LEFT JOIN: Returns all records from the left table and matching records from the right table.
+RIGHT JOIN: Returns all records from the right table and matching records from the left table.
+FULL OUTER JOIN: Returns all records when there is a match in either table.
+CROSS JOIN: Returns the Cartesian product of two tables.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+8. What is a foreign key?
+Answer: A foreign key is a column in a table that references the primary key of another table, establishing a relationship between the two tables.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+9. What is an index in SQL?
+Answer: An index is a database object that improves the speed of data retrieval operations by creating a quick lookup reference for the rows in a table.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+10. What is the difference between DELETE and TRUNCATE?
+Answer:
+DELETE: Removes specific rows from a table and can include a WHERE clause. It is a DML command and can be rolled back.
+TRUNCATE: Removes all rows from a table without logging individual row deletions. It is a DDL command and cannot be rolled back.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+11. What are stored procedures in SQL?
+Answer: Stored procedures are a set of SQL statements stored in the database that can be executed as a single unit. They are used to encapsulate logic, improve performance, and enhance security.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+12. What is a view in SQL?
+Answer: A view is a virtual table based on the result of a query. It does not store data but displays data retrieved from other tables.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+13. What is a transaction in SQL?
+Answer: A transaction is a sequence of operations performed as a single logical unit of work. It ensures data integrity through properties like ACID (Atomicity, Consistency, Isolation, Durability).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+14. What is the difference between HAVING and WHERE?
+Answer:
+WHERE: Filters rows before grouping. It cannot use aggregate functions.
+HAVING: Filters groups after grouping. It can use aggregate functions.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+15. What is a trigger in SQL?
+Answer: A trigger is a database object that automatically executes predefined actions in response to certain events on a table, such as INSERT, UPDATE, or DELETE.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+16. Explain ACID properties in SQL.
+Answer:
+Atomicity: Ensures all operations in a transaction are completed or none are.
+Consistency: Ensures a transaction brings the database from one valid state to another.
+Isolation: Ensures transactions do not interfere with each other.
+Durability: Ensures the results of a committed transaction are permanent.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+17. What is a clustered index vs. a non-clustered index?
+Answer:
+Clustered Index: Sorts and stores data rows in the table based on the key values. A table can have only one clustered index.
+Non-Clustered Index: Creates a separate structure to hold the index, pointing to the actual data in the table. A table can have multiple non-clustered indexes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+18. What is the difference between correlated and non-correlated subqueries?
+Answer:
+Correlated Subquery: A subquery that depends on the outer query for its values.
+Non-Correlated Subquery: A subquery that can be executed independently of the outer query.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+19. What is denormalization?
+Answer: Denormalization is the process of introducing redundancy into a database to improve read performance, typically used in data warehouses.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20. What is the difference between UNION and UNION ALL?
+Answer:
+UNION: Combines the result sets of two queries and removes duplicates.
+UNION ALL: Combines the result sets of two queries without removing duplicates.
+
+
+============================================================================================================================================================================
