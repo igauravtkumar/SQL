@@ -1,0 +1,52 @@
+use sales;
+select * from sales_cc;
+UPDATE sales_cc
+SET sales_date = STR_TO_DATE(sales_date, '%m/%d/%Y');
+# # Q -  get all transaction done for beauty category in 
+# the month of december
+select * from sales_cc where categoryProduct = 'Beauty' and
+month(sales_date) = 12;
+
+# Q - Get the total sales done for each category in each month
+
+select categoryProduct,sum(total_sale), month(sales_date) from 
+sales_cc group by categoryProduct, month(sales_date);
+
+# Q- find the maximum , minium , average age for people
+#  buying beauty products
+select * from sales_cc;
+select max(age), min(age), avg(age), categoryProduct from sales_cc 
+where categoryProduct = 'Beauty';
+
+# Q- GEt number of transaction done by each user in each category
+select customer_id, categoryProduct,count(customer_id)  from sales_cc
+group by customer_id, categoryProduct
+order by customer_id ;
+
+# Q- Find the best selling month for 
+# each year along with the average sales for each month
+
+
+
+#Q- Get the top 3 and the bottom 3 customer based on their average sales
+
+(select customer_id , avg(total_sale) as avg_sales from sales_cc 
+group by customer_id order by avg_sales asc limit 3 )
+union all(
+select customer_id , avg(total_sale) as avg_sales from sales_cc 
+group by customer_id order by avg_sales desc limit 3);
+
+# Q- Get the number of unique customer who purchased product 
+# for each category
+select * from sales_cc;
+select  categoryProduct,count(distinct customer_id) from sales_cc
+group by categoryProduct;
+
+# Q- how many orders are placed from morning to 1 pm 
+# - how many orders are placed in lunch time from 1pm to 3 pm
+# - how many orders are placed in evening time after 5 pm
+
+select sum(case when time(time) < '13:00:00' then 1 else 0 
+end) as morning_order , sum(case when time(time) between '13:00:00'
+and '15:00:00' then 1 else 0 end) as lunch_order,  sum(case when time(time) > '17:00:00'
+ then 1 else 0 end) as evening_order from sales_cc;
