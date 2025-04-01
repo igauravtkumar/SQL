@@ -1,0 +1,19 @@
+set serveroutput on;
+
+declare
+    x int;
+    y int;
+    
+procedure addNo(a in out int , b in int) is 
+begin
+    a:=a+b;
+    dbms_output.put_line('inside parameter'  || ' ' || a);
+end;
+begin 
+    x :=10;
+    y:=20;
+     dbms_output.put_line('before value is x '  || ' = ' || x);
+     addNo(x,y);
+     dbms_output.put_line('value is x '  || ' = ' || x);
+end;     
+    
