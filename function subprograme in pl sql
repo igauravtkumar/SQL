@@ -1,0 +1,24 @@
+set serveroutput on;
+
+--create or replace function message2
+--return int
+--is 
+--
+--begin
+--     dbms_output.put_line('hello user');
+--     return 10;
+--    
+--end;
+
+
+create or replace function count_emp
+return int 
+is 
+emp_count int;
+ begin 
+    select count(EMPLOYEE_ID) into emp_count from employees;
+    dbms_output.put_line('hey');
+    return emp_count;
+
+
+ end;
